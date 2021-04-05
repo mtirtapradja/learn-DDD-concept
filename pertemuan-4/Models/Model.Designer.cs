@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\ASUS\Desktop\College\04 Semester 4\03 Pattern Software Design\Lab\Repo\pertemuan-4\pertemuan-4\Models\Model.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\ASUS\Desktop\College\04 Semester 4\03 Pattern Software Design\Lab\Repo\pertemuan-4, 5\pertemuan-4\Models\Model.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
