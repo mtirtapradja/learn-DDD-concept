@@ -1,4 +1,5 @@
-﻿using pertemuan_4.Handlers;
+﻿using pertemuan_4.Controllers;
+using pertemuan_4.Handlers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,33 +26,15 @@ namespace pertemuan_4.Views
             string confirmPassword = txtConfirm.Text;
             DateTime dob = calendarDOB.SelectedDate;
 
-            if (username.Equals(""))
+            string response = UserController.CheckRegister(username, password, confirmPassword, dob);
+
+            if (response == "")
             {
-                lblError.Text = "Username must be filled";
-            }
-            else if (password.Equals(""))
-            {
-                lblError.Text = "Password must be filled";
-            }
-            else if (!confirmPassword.Equals(password))
-            {
-                lblError.Text = "Confirm password must be the same as password";
-            }
-            else if (dob.Date == DateTime.MinValue)
-            {
-                lblError.Text = "DOB must be chosen";
+                Response.Redirect("LoginPage.aspx");
             }
             else
             {
-                if (UserHandler.InsertNewUser(username, password, dob))
-                {
-                    Response.Redirect("LoginPage.aspx");
-                }
-                else
-                {
-                    lblError.Text = "Failed to register!";
-                }
-
+                lblError.Text = response;
             }
         }
 

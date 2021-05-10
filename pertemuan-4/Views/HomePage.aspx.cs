@@ -43,5 +43,10 @@ namespace pertemuan_4.Views
         {
             Response.Redirect("ManageProductPage.aspx");
         }
+
+        protected void btnOrderProduct_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("OrderProductPage.aspx");
+        }
     }
 }

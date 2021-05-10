@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using pertemuan_4.Controllers;
 
 namespace pertemuan_4.Views
 {
@@ -24,15 +25,11 @@ namespace pertemuan_4.Views
             string username = txtUsername.Text;
             string password = txtPassword.Text;
 
-            User currentUser = UserHandler.Login(username, password);
+            string response = UserController.CheckLogin(username, password);
 
-            if (currentUser == null)
+            if (response == "")
             {
-                lblError.Text = "User not found!";
-            }
-            else
-            {
-                Session["user"] = currentUser;
+                Session["user"] = UserController.GetUser(username, password);
                 Response.Redirect("HomePage.aspx");
             }
         }

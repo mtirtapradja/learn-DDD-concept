@@ -1,6 +1,6 @@
-﻿using pertemuan_4.Models;
-using pertemuan_4.Repository;
-using pertemuan_4.Handlers;
+﻿using pertemuan_4.Handlers;
+using pertemuan_4.Controllers;
+using pertemuan_4.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,7 +34,7 @@ namespace pertemuan_4.Views
 
         protected void FillGrid()
         {
-            gvProduct.DataSource = ProductHandler.GetProductList();
+            gvProduct.DataSource = ProductController.GetProductList();
             gvProduct.DataBind();
         }
 
@@ -44,31 +44,16 @@ namespace pertemuan_4.Views
             string str_price = txtPrice.Text;
             string str_quantity = txtQuantity.Text;
 
-            if (name == "")
+            string response = ProductController.CheckInsert(name, str_price, str_quantity);
+
+            if (response == "")
             {
-                lblError.Text = "Name must be filled!";
-            }
-            else if (str_price == "")
-            {
-                lblError.Text = "Price must be filled!";
+                lblError.Text = "";
+                FillGrid();
             }
             else
             {
-                int price = int.Parse(str_price);
-                int quantity;
-
-                // TryParse bakal cobain parse argument pertama,
-                // kalo berhasil dia bakal di masukin ke quarntyty
-                if (int.TryParse(str_quantity, out quantity))
-                {
-                    ProductHandler.InsertNewProduct(name, price, quantity);
-                }
-                else
-                {
-                    ProductHandler.InsertNewProductWithDefaultQuantity(name, price);
-                }
-
-                FillGrid();
+                lblError.Text = response;
             }
         }
 
@@ -79,45 +64,16 @@ namespace pertemuan_4.Views
             string str_price = txtPrice.Text;
             string str_quantity = txtQuantity.Text;
 
-            if (name == "")
+            string response = ProductController.CheckUpdate(id, name, str_price, str_quantity);
+
+            if (response == "")
             {
-                lblError.Text = "Name must be filled!";
-            }
-            else if (str_price == "")
-            {
-                lblError.Text = "Price must be filled!";
+                lblError.Text = "";
+                FillGrid();
             }
             else
             {
-                int price = int.Parse(str_price);
-                int quantity;
-
-                // TryParse bakal cobain parse argument pertama,
-                // kalo berhasil dia bakal di masukin ke quarntyty
-                if (int.TryParse(str_quantity, out quantity))
-                {
-                    if (!ProductHandler.UpdateProduct(id, name, price, quantity))
-                    {
-                        lblError.Text = "Product not found!";
-                    }
-                    else
-                    {
-                        lblError.Text = "Update Succesful";
-                    }
-                }
-                else
-                {
-                    if (!ProductHandler.UpdateProductWithDefaultQuantity(id, name, price))
-                    {
-                        lblError.Text = "Product not found!";
-                    }
-                    else
-                    {
-                        lblError.Text = "Update Succesful";
-                    }
-                }
-
-                FillGrid();
+                lblError.Text = response;
             }
         }
 
@@ -125,16 +81,17 @@ namespace pertemuan_4.Views
         {
             int id = int.Parse(txtID.Text);
 
-            if (!ProductHandler.DeleteProductById(id))
+            string response = ProductController.CheckDelete(id);
+
+            if (response == "")
             {
-                lblError.Text = "Product not found!";
+                lblError.Text = "";
+                FillGrid();
             }
             else
             {
-                lblError.Text = "Delete Succesful";
+                lblError.Text = response;
             }
-
-            FillGrid();
         }
 
         protected void linkHome_Click(object sender, EventArgs e)

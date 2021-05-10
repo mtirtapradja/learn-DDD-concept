@@ -14,6 +14,11 @@ namespace pertemuan_4.Handlers
         {
             return UserRepository.GetUser(username, password);
         }
+        
+        public static User GetUser(string username, string password)
+        {
+            return UserRepository.GetUser(username, password);
+        }
 
         public static bool InsertNewUser(string username, string password, DateTime DOB)
         {
