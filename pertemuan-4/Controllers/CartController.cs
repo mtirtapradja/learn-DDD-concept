@@ -39,5 +39,21 @@ namespace pertemuan_4.Controllers
         {
             return CartHandler.GetThisUserCart(id);
         }
+
+        public static string Checkout(int userId)
+        {
+            string response = "";
+
+            if (CartHandler.Checkout(userId))
+            {
+                response = "";
+            } 
+            else
+            {
+                response = "You haven't ordered anything";
+            }
+
+            return response;
+        }
     }
 }

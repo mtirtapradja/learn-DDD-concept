@@ -27,5 +27,18 @@ namespace pertemuan_4.Repository
         {
             return (from x in db.Carts where x.UserId == id select x).ToList();
         }
+
+        public static bool RemoveCart(Cart cart)
+        {
+            if (cart != null)
+            {
+                db.Carts.Remove(cart);
+                db.SaveChanges();
+
+                return true;
+            }
+
+            return false;
+        }
     }
 }
