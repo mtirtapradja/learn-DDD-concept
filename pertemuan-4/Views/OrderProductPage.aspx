@@ -20,4 +20,10 @@
     <div>
         <asp:Button ID="btnOrder" Text="Order" OnClick="btnOrder_Click" runat="server" />
     </div>
+    <div>
+        <asp:Button ID="btnCheckout" Text="Check Out" OnClick="btnCheckout_Click" runat="server" />
+    </div>
+    <div>
+        <asp:LinkButton ID="linkHome" Text="Back to Home Page" OnClick="linkHome_Click" runat="server" />
+    </div>
 </asp:Content>

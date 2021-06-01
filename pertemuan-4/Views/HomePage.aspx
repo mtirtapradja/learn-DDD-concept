@@ -12,5 +12,6 @@
         <asp:Button ID="btnLogout" Text="Logout" OnClick="btnLogout_Click" runat="server" />
         <asp:Button ID="btnManageProduct" Text="Manage Product" OnClick="btnManageProduct_Click" runat="server" />
         <asp:Button ID="btnOrderProduct" Text="Order Product" OnClick="btnOrderProduct_Click" runat="server" />
+        <asp:Button ID="btnHistory" Text="See History" OnClick="btnHistory_Click" runat="server" />
     </div>
 </asp:Content>

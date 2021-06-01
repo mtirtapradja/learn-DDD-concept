@@ -127,8 +127,8 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Content Include="Views\TransactionHistoryPage.aspx" />
     <None Include="Web References\WebService\MainService.disco" />
+    <Content Include="Views\TransactionHistoryPage.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -246,6 +246,7 @@
     </Compile>
     <Compile Include="Views\TransactionHistoryPage.aspx.cs">
       <DependentUpon>TransactionHistoryPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\TransactionHistoryPage.aspx.designer.cs">
       <DependentUpon>TransactionHistoryPage.aspx</DependentUpon>
@@ -307,7 +308,7 @@
       <CachedDynamicPropName>
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>pertemuan_4_localhost_MainService</CachedSettingsPropName>
+      <CachedSettingsPropName>pertemuan_4_WebService_MainService</CachedSettingsPropName>
     </WebReferenceUrl>
   </ItemGroup>
   <PropertyGroup>

@@ -47,5 +47,27 @@ namespace pertemuan_4.Views
                 lblError.Text = response;
             }
         }
+
+        protected void btnCheckout_Click(object sender, EventArgs e)
+        {
+            int userId = ((User)Session["user"]).Id;
+
+            string response = CartController.Checkout(userId);
+
+            if (response == "")
+            {
+                lblError.Text = "";
+                FillGrid();
+            }
+            else
+            {
+                lblError.Text = response;
+            }
+        }
+
+        protected void linkHome_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("HomePage.aspx");
+        }
     }
 }

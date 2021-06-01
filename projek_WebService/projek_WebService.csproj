@@ -91,7 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Factories\TransactionFactory.cs" />
-    <Compile Include="Handlers\JsonHandler.cs" />
+    <Compile Include="Utils\JsonHandler.cs" />
     <Compile Include="Handlers\TransactionHandler.cs" />
     <Compile Include="MainService.asmx.cs">
       <DependentUpon>MainService.asmx</DependentUpon>
