@@ -53,5 +53,10 @@ namespace pertemuan_4.Views
         {
             Response.Redirect("TransactionHistoryPage.aspx");
         }
+
+        protected void btnReport_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ReportPage.aspx");
+        }
     }
 }

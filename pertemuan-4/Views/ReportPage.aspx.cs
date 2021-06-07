@@ -17,7 +17,7 @@ namespace pertemuan_4.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            TransactionReport transactionReport = new TransactionReport();
+            GroupingReport transactionReport = new GroupingReport();
             transactionReport.SetDataSource(GetData());
             crvTransaction.ReportSource = transactionReport;
         }
