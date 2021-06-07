@@ -2,7 +2,7 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="pertemuan_4.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="pertemuan_4_localhost_MainService" Type="(Web Service URL)" Scope="Application">
+    <Setting Name="pertemuan_4_WebService_MainService" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">https://localhost:44344/MainService.asmx</Value>
     </Setting>
   </Settings>

@@ -21,5 +21,10 @@ namespace pertemuan_4.Repository
 
             return false;
         }
+
+        public static List<TransactionDetail> GetTransactionDetails(int transactionId)
+        {
+            return (from x in db.TransactionDetails where x.TransactionId == transactionId select x).ToList();
+        }
     }
 }

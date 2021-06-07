@@ -21,5 +21,10 @@ namespace pertemuan_4.Repository
 
             return false;
         }
+
+        public static List<TransactionHeader> GetAllTransactions()
+        {
+            return db.TransactionHeaders.ToList();
+        }
     }
 }

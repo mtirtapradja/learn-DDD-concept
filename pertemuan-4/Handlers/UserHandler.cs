@@ -26,5 +26,6 @@ namespace pertemuan_4.Handlers
 
             return UserRepository.InsertUser(currentUser);
         }
+
     }
 }

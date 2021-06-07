@@ -27,9 +27,9 @@ namespace pertemuan_4.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
         [global::System.Configuration.DefaultSettingValueAttribute("https://localhost:44344/MainService.asmx")]
-        public string pertemuan_4_localhost_MainService {
+        public string pertemuan_4_WebService_MainService {
             get {
-                return ((string)(this["pertemuan_4_localhost_MainService"]));
+                return ((string)(this["pertemuan_4_WebService_MainService"]));
             }
         }
     }
